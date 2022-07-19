@@ -3,9 +3,9 @@
     Created on : Jul 19, 2022, 9:52:58 AM
     Author     : killua
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -32,7 +32,7 @@
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-          <a class="navbar-brand" href="../../index.html">
+          <a class="navbar-brand" href="../../Briliant/index.jsp">
             <img src="../assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
             Brilian
           </a>
@@ -41,10 +41,11 @@
           <ul class="navbar-nav justify-content-end">
           </div>
           <form class="container-fluid justify-content-end">
-            <a href="login.html"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
-            <a href="register.html"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>  
+            <a href="login.jsp"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
+            <a href="register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>  
           </form>
         </nav>
+        <form method="post" action="../Login?proses=login">
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -55,14 +56,14 @@
                       <h3 class="mb-5">Sign in</h3>
           
                       <div class="form-group">
-                        <input type="email" id="email" class="form-control" placeholder="Email" required/>
+                        <input type="email" id="email" class="form-control" placeholder="Email" required name="email"/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Email.
                         </div>
                       </div>
                       <div class="form-group">
-                        <input type="password" id="password" class="form-control" placeholder="Password" required/>
+                        <input type="password" id="password" class="form-control" placeholder="Password" required name="password"/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Password.
@@ -78,7 +79,7 @@
                       <button class="btn btn-primary btn-lg btn-block" type="submit" id="login">Login</button>
                       <div id="liveAlertPlaceholder"></div>
                       <hr class="text-danger border-2 opacity-50">
-                      <p class="text-center">New to Brilian? <a href="register.html" class="link-primary">Create an account</a></p>
+                      <p class="text-center">New to Brilian? <a href="register.jsp" class="link-primary">Create an account</a></p>
                     
                     </div>
                   </form>
@@ -86,6 +87,7 @@
                 </div>
               </div>
             </div>
+            </form>
             <script>
 (() => {
   'use strict';

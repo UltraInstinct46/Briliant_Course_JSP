@@ -3,11 +3,6 @@
     Created on : Jul 19, 2022, 9:52:58 AM
     Author     : killua
 --%>
-<%@page import="javax.swing.JOptionPane"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
-<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -50,6 +45,7 @@
             <a href="register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>  
           </form>
         </nav>
+        <form method="post" action="../Login?proses=login">
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -91,6 +87,7 @@
                 </div>
               </div>
             </div>
+            </form>
             <script>
 (() => {
   'use strict';
@@ -131,57 +128,3 @@ const alertTrigger = document.getElementById('login')
             </script>
     </body>
 </html>
-
-<%
- String email=request.getParameter("email");
- String password=request.getParameter("password");
- ResultSet rs;
-//membuat variabel untuk nampung alamatuntuk akses database nantinya.
-String url="jdbc:mysql://localhost:3306/briliant";
-//membuat koneksi ke database dengan jdbcConnection conn=null;
-Connection conn=null;
-PreparedStatement ps=null;
-
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-//untuk mengecek textbox name, city, dan phone tidak kosong
-if(email!=null && password!=null){
- if(email!="" && password!="")
- {
- try{
-
- conn=DriverManager.getConnection(url,"root","");
- String queryq="Select * from user where email=? and password=?";
- // out.println("query="+query);
- ps=conn.prepareStatement(queryq);
- ps.setString(1,email);
- ps.setString(2,password);
-
- rs=ps.executeQuery();
- //out.println(updateQuery);
- if (rs.next()){
- %>
- <script>
- alert("Login Berhasil");
- window.location.replace("../../Briliant/Courses.jsp");
- </script>
-<%
- }
- else {
- %>
- <script>
- alert("Login Gagal");
- </script>
- <%
- }
- } 
-
- catch(Exception ex){
- out.println(ex.getMessage());
- }
- finally {
- ps.close();
- conn.close();
- }
-}
-}
-%>
