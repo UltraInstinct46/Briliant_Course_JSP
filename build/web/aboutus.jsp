@@ -95,6 +95,7 @@ html {
 </head>
 <body>
 
+  
 <div class="about-section">
   <h1>ABOUT US</h1>
   <p>Hello all, for all friends who want to learn about IT, 

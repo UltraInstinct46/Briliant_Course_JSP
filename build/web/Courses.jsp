@@ -88,6 +88,7 @@
 html{
   scroll-behavior: smooth;
 }
+
 </style>
     </head>
 <body style="background-color:#F2F3F5;">
