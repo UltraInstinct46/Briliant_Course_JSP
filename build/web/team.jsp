@@ -453,7 +453,6 @@ div.a{
 </style>
 
     </head>
-    
     <body id="page-top" style="background-color:#F2F3F5;">
       <!--Navbar-->
       <header class="header">

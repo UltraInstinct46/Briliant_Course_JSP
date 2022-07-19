@@ -4,7 +4,6 @@
     Author     : killua
 --%>
 
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -449,7 +448,6 @@ div.a{
         text-align: justify;
     }
 </style>
-
 
     </head>
     <body id="page-top" style="background-color:#F2F3F5;">

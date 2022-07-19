@@ -15,7 +15,6 @@ public class KoneksiDB {
     private Connection conn;
     private Statement st;
 
-
     public static void ambilKoneksi() {
         try {
             String db = "jdbc:mysql://localhost:3306/briliant";
