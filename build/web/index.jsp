@@ -477,7 +477,7 @@ ul{
       <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
           <div class="container">
-            <a class="navbar-brand" href="index.jsp">
+            <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
               <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
               Brilian
             </a>
@@ -488,23 +488,23 @@ ul{
             <form class="container-fluid justify-content-end">
               <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+                  <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Courses.jsp">Courses</a>
+                  <a class="nav-link" href="Courses.html">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
+                  <a class="nav-link" href="Profile.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
+                  <a class="nav-link" href="team.html">Team</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Contact.jsp">Contact</a>
+                  <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
               </ul>
-              <a href="auth/login.jsp"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
-              <a href="auth/register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
+              <a href="auth/login.html"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
+              <a href="auth/register.html"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
             </form>
           </nav>
         </header>
@@ -518,7 +518,7 @@ ul{
               </h2>
               <h1 class="paragraph">Courses designed by our team</h1>
               <h1 class="paragraph">Join us. <b>Its Free !</b></h1>
-              <a href="auth/register.jsp"><button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; ">Start Learning Now!</button></a>
+              <a href="auth/register.html"><button type="button" class="btn btn-primary"style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; ">Start Learning Now!</button></a>
             </div>
           </div>
 
@@ -547,7 +547,7 @@ ul{
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/java.png"
                            alt="Card image cap">
                       </a>
@@ -559,7 +559,7 @@ ul{
         
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/javascript.png"
                            alt="Card image cap">
                       </a>
@@ -572,7 +572,7 @@ ul{
         
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/mysql.png"
                            alt="Card image cap">
                       </a>
@@ -594,7 +594,7 @@ ul{
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/android.png"
                            alt="Card image cap">
                       </a>
@@ -606,7 +606,7 @@ ul{
         
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/codeigniter.png"
                            alt="Card image cap">
                       </a>
@@ -620,7 +620,7 @@ ul{
         
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/git.png"
                            alt="Card image cap">
                       </a>
@@ -640,7 +640,7 @@ ul{
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/typescript.png"
                            alt="Card image cap">
                       </a>
@@ -654,7 +654,7 @@ ul{
         
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/html5.png"
                            alt="Card image cap">
                       </a>
@@ -668,7 +668,7 @@ ul{
         
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <a href="Courses.jsp">
+                      <a href="Courses.html">
                       <img class="card-img-top mx-auto mt-4" src="assets/img/angularjs.png"
                            alt="Card image cap">
                       </a>
@@ -860,7 +860,7 @@ ul{
   <footer>
     <div class="footer-content">
         <h3><b>Coding has never been easier</b></h3>
-        <a href="Courses.jsp"><button class="button btn" type="submit">Start Learning Now</button></a>
+        <a href="Courses.html"><button class="button btn" type="submit">Start Learning Now</button></a>
         <p>Follow us on social media :</p>
         <ul class="socialmedia">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>

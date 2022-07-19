@@ -95,7 +95,7 @@ html{
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
           <div class="container">
-            <a class="navbar-brand" href="index.jsp">
+            <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
               <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
               Brilian
             </a>
@@ -105,23 +105,23 @@ html{
             <form class="container-fluid justify-content-end">
               <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.jsp">Home</a>
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="Courses.jsp">Courses</a>
+                  <a class="nav-link active" href="Courses.html">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
+                  <a class="nav-link" href="Profile.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
+                  <a class="nav-link" href="team.html">Team</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Contact.jsp">Contact</a>
+                  <a class="nav-link" href="Contact.html">Contact</a>
                 </li>
               </ul>
-              <a href="auth/login.jsp"><button class="btn-lg btn-outline-success me-2 mr-3" type="button">Login</button></a>
-              <a href="auth/register.jsp"><button class="btn-lg btn-primary me-2 " type="button">Sign Up</button></a>
+              <a href="auth/login.html"><button class="btn-lg btn-outline-success me-2 mr-3" type="button">Login</button></a>
+              <a href="auth/register.html"><button class="btn-lg btn-primary me-2 " type="button">Sign Up</button></a>
             </form>
           </nav>
         </header>

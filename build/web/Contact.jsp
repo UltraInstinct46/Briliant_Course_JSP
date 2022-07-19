@@ -4,6 +4,7 @@
     Author     : killua
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -455,7 +456,7 @@ div.a{
       <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
           <div class="container">
-            <a class="navbar-brand" href="index.jsp">
+            <a class="navbar-brand" href="http://127.0.0.1:5500/index.html">
               <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
               Brilian
             </a>
@@ -466,23 +467,23 @@ div.a{
             <form class="container-fluid justify-content-end">
               <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.jsp">Home</a>
+                  <a class="nav-link" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Courses.jsp">Courses</a>
+                  <a class="nav-link" href="Courses.html">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
+                  <a class="nav-link" href="Profile.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
+                  <a class="nav-link" href="team.html">Team</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="Contact.jsp">Contact</a>
+                  <a class="nav-link active" href="Contact.html">Contact</a>
                 </li>
               </ul>
-              <a href="auth/login.jsp"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
-              <a href="auth/register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
+              <a href="auth/login.html"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
+              <a href="auth/register.html"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
             </form>
           </nav>
         </header>
@@ -531,7 +532,7 @@ div.a{
   <footer>
     <div class="footer-content">
         <h3><b>Coding has never been easier</b></h3>
-        <a href="Courses.jsp"><button class="button btn" type="submit">Start Learning Now</button></a>
+        <a href="Courses.html"><button class="button btn" type="submit">Start Learning Now</button></a>
         <p>Follow us on social media :</p>
         <ul class="socialmedia">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>

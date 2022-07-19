@@ -3,10 +3,7 @@
     Created on : Jul 19, 2022, 9:53:10 AM
     Author     : killua
 --%>
-<%@page import="javax.swing.JOptionPane"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +32,7 @@
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-          <a class="navbar-brand" href="../../Briliant/index.jsp">
+          <a class="navbar-brand" href="../../index.html">
             <img src="../assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
             Brilian
           </a>
@@ -43,8 +40,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           </div>
           <form class="container-fluid justify-content-end">
-            <a href="login.jsp"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
-            <a href="register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
+            <a href="login.html"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
+            <a href="register.html"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
           </form>
         </nav>
             <div class="container py-5 h-100">
@@ -57,7 +54,7 @@
                       <h3 class="mb-5">Register</h3>
           
                       <div class="form-group">
-                        <input type="email" id="email" class="form-control" placeholder="Email" required name="email"/>
+                        <input type="email" id="email" class="form-control" placeholder="Email" required/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Email.
@@ -65,7 +62,7 @@
                       </div>
 
                       <div class="form-group">
-                        <input type="text" id="name" class="form-control" placeholder="Name" required name="name"/>
+                        <input type="text" id="name" class="form-control" placeholder="Name" required/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Name.
@@ -73,7 +70,7 @@
                       </div>
           
                       <div class="form-group">
-                        <input type="password" id="password" class="form-control" placeholder="Password" required name="password"/>
+                        <input type="password" id="password" class="form-control" placeholder="Password" required/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Password.
@@ -83,7 +80,7 @@
                       <button class="btn btn-primary btn-lg btn-block" type="submit" id="login">Register</button>
 
                       <hr class="text-danger border-2 opacity-50">
-                      <p class="text-center">Already have an account? <a href="login.jsp" class="link-primary">Signin</a></p>
+                      <p class="text-center">Already have an account? <a href="login.html" class="link-primary">Signin</a></p>
 
                     </div>
                     </form>
@@ -131,59 +128,3 @@
                           </script>
     </body>
 </html>
-
-<% String name=request.getParameter("name");
- String email=request.getParameter("email");
- String password=request.getParameter("password");
-
-//membuat variabel untuk nampung alamatuntuk akses database nantinya.
-String url="jdbc:mysql://localhost:3306/briliant";
-//membuat koneksi ke database dengan jdbcConnection conn=null;
-Connection conn=null;
-PreparedStatement ps=null;
-
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-int updateQuery=0;
-//untuk mengecek textbox name, city, dan phone tidak kosong
-if(name!=null && email!=null && password!=null){
- if(name!="" && email!="" && password!="")
- {
- try{
-
- conn=DriverManager.getConnection(url,"root","");
- String queryq="insert into user(name,email,password) values(?,?,?)";
- // out.println("query="+query);
- ps=conn.prepareStatement(queryq);
- ps.setString(1,name);
- ps.setString(2,email);
- ps.setString(3,password);
-
- updateQuery=ps.executeUpdate();
- //out.println(updateQuery);
- if (updateQuery!=0){
-
- %>
- <script>
- alert("input data sukses");
- </script>
-<%
- }
- else {
- %>
- <script>
- alert("inputdata tidak berhasil");
- </script>
- <%
- }
- } 
-
- catch(Exception ex){
- out.println(ex.getMessage());
- }
- finally {
- ps.close();
- conn.close();
- }
-}
-}
-%>
