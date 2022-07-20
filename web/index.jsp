@@ -474,40 +474,7 @@ ul{
 
 
       <!--Navbar-->
-      <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
-          <div class="container">
-            <a class="navbar-brand" href="index.jsp">
-              <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-              Brilian
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            </div>
-            <form class="container-fluid justify-content-end">
-              <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Courses.jsp">Courses</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Contact.jsp">Contact</a>
-                </li>
-              </ul>
-              <a href="auth/login.jsp"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
-              <a href="auth/register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
-            </form>
-          </nav>
-        </header>
+<%@ include file="header.jsp"%>
           <!--Background-->
           <div class="bg-image d-flex justify-content-center align-items-center" style="background-image: url('assets/img/background.png'); height: 80vh;" id="home">
             <div class="text">
@@ -857,24 +824,7 @@ ul{
       </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-        <h3><b>Coding has never been easier</b></h3>
-        <a href="Courses.jsp"><button class="button btn" type="submit">Start Learning Now</button></a>
-        <p>Follow us on social media :</p>
-        <ul class="socialmedia">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-    </div>
-    <div class="footer-bottom">
-        <p>Copyright &copy;2022 Brilian Course. design by Group 3<span></span></p>
-    </div>
-</footer>
+<%@ include file="footer.jsp"%>
   
           <script>
             var alertPlaceholder = document.getElementById('liveAlertPlaceholder')

@@ -88,43 +88,23 @@
 html{
   scroll-behavior: smooth;
 }
+.card-img-top{
+    display: block;
+    width: 55%;
+    height: 55%;
+    background: #E6E7ED;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
 </style>
     </head>
 <body style="background-color:#F2F3F5;">
     <!-- navbar -->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
-          <div class="container">
-            <a class="navbar-brand" href="index.jsp">
-              <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-              Brilian
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </div>
-            <form class="container-fluid justify-content-end">
-              <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.jsp">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="Courses.jsp">Courses</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Contact.jsp">Contact</a>
-                </li>
-              </ul>
-              <a href="auth/login.jsp"><button class="btn-lg btn-outline-success me-2 mr-3" type="button">Login</button></a>
-              <a href="auth/register.jsp"><button class="btn-lg btn-primary me-2 " type="button">Sign Up</button></a>
-            </form>
-          </nav>
-        </header>
+<%@ include file="header.jsp"%>
     <div class="container my-5">
     <div class="h1 text-center">What would you like to learn?</div>
     <hr>
