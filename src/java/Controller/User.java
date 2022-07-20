@@ -18,7 +18,7 @@ import java.util.List;
  *
  * @author killua
  */
-public class Login extends HttpServlet {
+public class User extends HttpServlet {
 
   
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
