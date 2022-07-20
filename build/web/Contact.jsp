@@ -1,10 +1,3 @@
-<<%-- 
-    Document   : Contact
-    Created on : Jul 19, 2022, 9:45:10 AM
-    Author     : killua
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
