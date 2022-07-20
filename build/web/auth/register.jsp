@@ -47,7 +47,8 @@
             <a href="register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
           </form>
         </nav>
-            <div class="container py-5 h-100">
+        <form method="post" action="../Login?proses=register">
+          <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                   <div class="card shadow-2-strong" style="border-radius: 1rem;">
@@ -91,6 +92,7 @@
                 </div>
               </div>
             </div>
+            </form>
             <script>
               (() => {
                 'use strict';
@@ -132,58 +134,3 @@
     </body>
 </html>
 
-<% String name=request.getParameter("name");
- String email=request.getParameter("email");
- String password=request.getParameter("password");
-
-//membuat variabel untuk nampung alamatuntuk akses database nantinya.
-String url="jdbc:mysql://localhost:3306/briliant";
-//membuat koneksi ke database dengan jdbcConnection conn=null;
-Connection conn=null;
-PreparedStatement ps=null;
-
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-int updateQuery=0;
-//untuk mengecek textbox name, city, dan phone tidak kosong
-if(name!=null && email!=null && password!=null){
- if(name!="" && email!="" && password!="")
- {
- try{
-
- conn=DriverManager.getConnection(url,"root","");
- String queryq="insert into user(name,email,password) values(?,?,?)";
- // out.println("query="+query);
- ps=conn.prepareStatement(queryq);
- ps.setString(1,name);
- ps.setString(2,email);
- ps.setString(3,password);
-
- updateQuery=ps.executeUpdate();
- //out.println(updateQuery);
- if (updateQuery!=0){
-
- %>
- <script>
- alert("input data sukses");
- </script>
-<%
- }
- else {
- %>
- <script>
- alert("inputdata tidak berhasil");
- </script>
- <%
- }
- } 
-
- catch(Exception ex){
- out.println(ex.getMessage());
- }
- finally {
- ps.close();
- conn.close();
- }
-}
-}
-%>

@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 /**
  *
  * @author killua
@@ -63,5 +64,15 @@ public class KoneksiDB {
         }
         return rs;
     }
-
+    
+        public PreparedStatement createData(String sql) {
+        PreparedStatement ps = null;
+        try {
+            koneksi();
+            ps = conn.prepareStatement(sql);
+        } catch (Exception x) {
+            System.out.println("Terjadi kesalahan ambil data : " + x);
+        }
+        return ps;
+    }
 }

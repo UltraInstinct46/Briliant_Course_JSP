@@ -64,6 +64,13 @@ public class Login extends HttpServlet {
                 }
             }
         }
+        else if(proses.equals("register")){
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        UserModel pm = new UserModel();
+        pm.CreateUser(name, email, password, "customer");
+        }
 
     }
 }

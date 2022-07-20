@@ -6,6 +6,7 @@ package Model;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.PreparedStatement;
 /**
  *
  * @author killua
@@ -77,5 +78,23 @@ public class UserModel {
             System.out.println("Terjadi kesalahaan cari login admin, pada :\n" + a);
         }
         return data;
+    }
+    public void CreateUser(String name, String email, String password, String roles){
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        int updateQuery = 0;
+        try {
+            String sql = "insert into user(name,email,password,roles) values(?,?,?,?)";
+            ps = db.createData(sql);
+            ps.setString(1, name);
+            ps.setString(2, email);
+            ps.setString(3, password);
+            ps.setString(4, roles);
+            updateQuery = ps.executeUpdate();
+            db.diskonek(rs);
+
+        } catch(Exception a) {
+            System.out.println("Terjadi kesalahan cari login admin, pada :\n" + a);
+        }
     }
 }
