@@ -22,5 +22,18 @@
 <h3 style="text-align:center">Please double-check your order before proceeding with payment :) </h3>
 <!--Bagian Judul End-->
 
+<!--Bagian Tabel-->
+<table>
+    <tr>
+        <td>No</td>
+        <td>Item Name</td>
+        <td>Item Price</td>
+        <td>Quantity</td>
+        <td>Total Price</td>
+    </tr>
+</table>
+<!--Bagian Tabel End-->
+
+
 </body>
 </html>
