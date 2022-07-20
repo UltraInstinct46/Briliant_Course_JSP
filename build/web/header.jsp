@@ -10,8 +10,6 @@
     <head>
     </head>
     <body>
-
-
       <!--Navbar-->
       <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">

@@ -23,7 +23,7 @@
 <!--Bagian Judul End-->
 
 <!--Bagian Tabel-->
-<table>
+<table class="tabel-cart" style="border: 2px; margin-left: auto; margin-right:auto">
     <tr>
         <td>No</td>
         <td>Item Name</td>
@@ -33,6 +33,7 @@
     </tr>
 </table>
 <!--Bagian Tabel End-->
+
 
 
 </body>
