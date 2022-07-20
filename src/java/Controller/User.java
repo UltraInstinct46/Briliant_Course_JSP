@@ -29,11 +29,15 @@ public class User extends HttpServlet {
             session.invalidate();
             response.sendRedirect("login.jsp");
         }
-
+        UserModel um = new UserModel();
+        List<UserModel> dataUser = new ArrayList<UserModel>();
+        dataUser = um.DataUser();
+        request.setAttribute("dataUser", dataUser);
+        request.getRequestDispatcher("backend/DataUser.jsp").forward(request, response);
     }
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         String proses = request.getParameter("proses");
 
         if (proses.equals("login")) {
@@ -71,6 +75,14 @@ public class User extends HttpServlet {
         UserModel pm = new UserModel();
         pm.CreateUser(name, email, password, "customer");
         }
-
+        else if (proses.equals("deleteuser")) {
+            UserModel pm = new UserModel();
+            String id = request.getParameter("id");
+            pm.DeleteUser(id);
+            response.sendRedirect("backend/DataUser.jsp");
+        }
+        else{
+            response.sendRedirect("auth/login.jsp");
+        }
     }
 }

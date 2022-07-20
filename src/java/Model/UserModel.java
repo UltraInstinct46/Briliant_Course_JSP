@@ -56,7 +56,28 @@ public class UserModel {
     public void setRoles(String roles){
         this.roles = roles;
     }
-    
+        public List DataUser() {
+        List data = new ArrayList();
+        ResultSet rs = null;
+        try {
+            String sql = "select * from user";
+            rs = db.ambilData(sql);
+
+            while (rs.next()) {
+                UserModel am = new UserModel();
+                am.setId(rs.getString("id_user"));
+                am.setName(rs.getString("name"));
+                am.setEmail(rs.getString("email"));                
+                am.setPassword(rs.getString("password"));
+                am.setRoles(rs.getString("roles"));
+                data.add(am);
+            }
+            db.diskonek(rs);
+        } catch (Exception a) {
+            System.out.println("Terjadi kesalahaan cari login admin, pada :\n" + a);
+        }
+        return data;
+    }
     public List LoginUser(String email, String password) {
         List data = new ArrayList();
         ResultSet rs = null;
@@ -95,6 +116,19 @@ public class UserModel {
 
         } catch(Exception a) {
             System.out.println("Terjadi kesalahan cari login admin, pada :\n" + a);
+        }
+    }
+        public void DeleteUser(String id) {
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        int updateQuery = 0;
+        try {
+            String sql = "delete from user where id_user ="+id;
+            ps=db.createData(sql);
+            updateQuery = ps.executeUpdate();
+            db.diskonek(rs);
+        } catch (Exception a) {
+            System.out.println("Terjadi kesalahaan cari login admin, pada :\n" + a);
         }
     }
 }
