@@ -3,7 +3,10 @@
     Created on : Jul 19, 2022, 9:53:10 AM
     Author     : killua
 --%>
-
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +35,7 @@
       <!--Navbar-->
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-          <a class="navbar-brand" href="../../index.html">
+          <a class="navbar-brand" href="../../Briliant/index.jsp">
             <img src="../assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
             Brilian
           </a>
@@ -40,11 +43,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           </div>
           <form class="container-fluid justify-content-end">
-            <a href="login.html"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
-            <a href="register.html"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
+            <a href="login.jsp"><button class="btn btn-outline-success me-2 mr-3" type="button">Login</button></a>
+            <a href="register.jsp"><button class="btn btn-primary me-2 " type="button">Sign Up</button></a>
           </form>
         </nav>
-            <div class="container py-5 h-100">
+        <form method="post" action="../User?proses=register">
+          <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                   <div class="card shadow-2-strong" style="border-radius: 1rem;">
@@ -54,7 +58,7 @@
                       <h3 class="mb-5">Register</h3>
           
                       <div class="form-group">
-                        <input type="email" id="email" class="form-control" placeholder="Email" required/>
+                        <input type="email" id="email" class="form-control" placeholder="Email" required name="email"/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Email.
@@ -62,7 +66,7 @@
                       </div>
 
                       <div class="form-group">
-                        <input type="text" id="name" class="form-control" placeholder="Name" required/>
+                        <input type="text" id="name" class="form-control" placeholder="Name" required name="name"/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Name.
@@ -70,7 +74,7 @@
                       </div>
           
                       <div class="form-group">
-                        <input type="password" id="password" class="form-control" placeholder="Password" required/>
+                        <input type="password" id="password" class="form-control" placeholder="Password" required name="password"/>
                         <div class="valid-feedback">Looks good!</div>
                         <div class="invalid-feedback">
                           Please provide a valid Password.
@@ -80,7 +84,7 @@
                       <button class="btn btn-primary btn-lg btn-block" type="submit" id="login">Register</button>
 
                       <hr class="text-danger border-2 opacity-50">
-                      <p class="text-center">Already have an account? <a href="login.html" class="link-primary">Signin</a></p>
+                      <p class="text-center">Already have an account? <a href="login.jsp" class="link-primary">Signin</a></p>
 
                     </div>
                     </form>
@@ -88,6 +92,7 @@
                 </div>
               </div>
             </div>
+            </form>
             <script>
               (() => {
                 'use strict';
@@ -128,3 +133,4 @@
                           </script>
     </body>
 </html>
+
