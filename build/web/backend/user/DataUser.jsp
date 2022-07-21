@@ -10,11 +10,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <!-- Custom styles for this template -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <%@ include file="../header/header.jsp"%>
+        <%@ include file="../header.jsp"%>
     <center><h1>Data User</h1></center>
         <div class="container-md">
             <a href="AddUser.jsp"><button type="button" class="btn btn-success p-2" style="width: 100px;margin: 10px">Add</button></a>

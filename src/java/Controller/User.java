@@ -27,13 +27,13 @@ public class User extends HttpServlet {
         if (action.equals("logout")) {
             HttpSession session = request.getSession();
             session.invalidate();
-            response.sendRedirect("login.jsp");
+            response.sendRedirect(request.getContextPath());
         }
-        UserModel um = new UserModel();
-        List<UserModel> dataUser = new ArrayList<UserModel>();
-        dataUser = um.DataUser();
-        request.setAttribute("dataUser", dataUser);
-        request.getRequestDispatcher("backend/user/DataUser.jsp").forward(request, response);
+//        UserModel um = new UserModel();
+//        List<UserModel> dataUser = new ArrayList<UserModel>();
+//        dataUser = um.DataUser();
+//        request.setAttribute("dataUser", dataUser);
+//        request.getRequestDispatcher("backend/user/DataUser.jsp").forward(request, response);
     }
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -44,6 +44,7 @@ public class User extends HttpServlet {
             String user = request.getParameter("name");
             String pass = request.getParameter("password");
             String email=request.getParameter("email");
+            String roles=request.getParameter("roles");
             String id=request.getParameter("id_user");
             if (pass == null || pass.equals("")) {   //validasi apabila field belum diisi
                 response.sendRedirect("form-kosong.jsp");
@@ -59,19 +60,17 @@ public class User extends HttpServlet {
                     session.setAttribute("email", datalogin.get(0).getEmail());
                     session.setAttribute("name", datalogin.get(0).getName());
                     session.setAttribute("id", datalogin.get(0).getId());
+                    session.setAttribute("roles", datalogin.get(0).getRoles());
+                    session.setAttribute("password", datalogin.get(0).getPassword());
 
                     if (datalogin.get(0).getEmail().equals(email)) {
-                        response.sendRedirect("Courses.jsp");
-                           System.out.println("<script type=\"text/javascript\">");
-                           System.out.println("alert('User or password incorrect');");
-                           System.out.println("location='Courses.jsp';");
-                           System.out.println("</script>");
+                        if(datalogin.get(0).getRoles().equals("customers")){
+                            response.sendRedirect("Courses.jsp");
+                        }else{
+                            response.sendRedirect("Courses.jsp");
+                        }
                     } else {
                         response.sendRedirect("auth/login.jsp");
-                           System.out.println("<script type=\"text/javascript\">");
-                           System.out.println("alert('User or password incorrect');");
-                           System.out.println("location='auth/login.jsp';");
-                           System.out.println("</script>");
                     }
                 }
             }
@@ -104,21 +103,21 @@ public class User extends HttpServlet {
             UserModel um = new UserModel();
             updatedata = um.SearchUser(id);
             HttpSession session = request.getSession(true);
-            session.setAttribute("id", updatedata.get(0).getId());
-            session.setAttribute("name", updatedata.get(0).getName());
-            session.setAttribute("email", updatedata.get(0).getEmail());
-            session.setAttribute("password", updatedata.get(0).getPassword());
-            session.setAttribute("roles", updatedata.get(0).getRoles());
+            session.setAttribute("id_user", updatedata.get(0).getId());
+            session.setAttribute("name_user", updatedata.get(0).getName());
+            session.setAttribute("email_user", updatedata.get(0).getEmail());
+            session.setAttribute("password_user", updatedata.get(0).getPassword());
+            session.setAttribute("roles_user", updatedata.get(0).getRoles());
             response.sendRedirect("backend/user/EditUser.jsp");
         }
         else if (proses.equals("updateuserdata")) {
-            String id = request.getParameter("id");
-            String name = request.getParameter("name");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String roles = request.getParameter("roles");
+            String id_user = request.getParameter("id_user");
+            String name = request.getParameter("name_user");
+            String email = request.getParameter("email_user");
+            String password = request.getParameter("password_user");
+            String roles = request.getParameter("roles_user");
             UserModel um = new UserModel();
-            um.UpdateUser(name, email, password, roles, id);
+            um.UpdateUser(name, email, password, roles, id_user);
             response.sendRedirect("backend/user/DataUser.jsp");
         }
         else{

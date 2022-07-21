@@ -8,11 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <!-- Custom styles for this template -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add User</title>
     </head>
     <body>
-        <%@ include file="../header/header.jsp"%>
+        <%@ include file="../header.jsp"%>
     <center><h1>Add User</h1></center>
     <form class="container" action="../../User?proses=registeradmin" method="post">
   <div class="form-group">

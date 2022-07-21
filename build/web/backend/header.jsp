@@ -8,12 +8,10 @@
 <!DOCTYPE html>
         <!-- Sidebar -->
         <head>
+    <link href="${pageContext.request.contextPath}/backend/css/sb-admin-2.min.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
         <body>
@@ -27,8 +25,8 @@
                     </form>
 
                     <!-- Topbar Search -->
-                                <a class="navbar-brand" href="index.jsp">
-              <img src="../../assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                                <a class="navbar-brand" href="${pageContext.request.contextPath}/backend/">
+              <img src="${pageContext.request.contextPath}/assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
               Admin Brilian
             </a>
  <li class="nav-item dropdown no-arrow">
@@ -36,7 +34,7 @@
     <span class="mr-2 d-none d-lg-inline text-gray-600">Data</span>
     </a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">User</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend/user/DataUser.jsp">User</a></li>
       <li><a class="dropdown-item" href="#">Courses</a></li>
     </ul>
 </li>
@@ -73,16 +71,32 @@
 
 
                     </ul>
- <li class="nav-item dropdown no-arrow">
+                    <% if(session.getAttribute("roles").equals("customers")) {
+            response.sendRedirect(request.getContextPath());
+                }
+            %>        
+            <% if((session.getAttribute("email") == null) || (session.getAttribute("email") == "")) {
+            response.sendRedirect(request.getContextPath() + "/User?action=logout");
+                }
+            %>
+<li class="nav-item dropdown no-arrow" style="margin-right:100px;">
     <a class="nav-item dropdown no-arrow" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+    <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+            class="rounded-circle"
+            height="42"
+            alt="Portrait of a Woman"
+            loading="lazy"
+          />
     </a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Setting</a></li>
+      <li><a class="dropdown-item" href=""><%=session.getAttribute("name")%></a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Logout</a></li>
+      <li><a class="dropdown-item" href="#">Setting</a></li>
+      <li><a class="dropdown-item" href="<% request.getContextPath();%>/Briliant">Home Page</a></li>
+      <li><a class="dropdown-item" href="<% request.getContextPath();%>../User?action=logout">Logout</a></li>
     </ul>
-  </li>
+  </li> 
                 </nav>
 
         </body>

@@ -8,32 +8,33 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <!-- Custom styles for this template -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edit User</title>
     </head>
     <body>
-        <%@ include file="../header/header.jsp"%>
+        <%@ include file="../header.jsp"%>
     <center><h1>Edit User</h1></center>
     <form class="container" action="../../User?proses=updateuserdata" method="post">
   <div class="form-group">
     <label for="id">ID</label>
-    <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="ID" readonly name="id" value="<%=session.getAttribute("id")%>">
+    <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="ID" readonly name="id_user" value="<%=session.getAttribute("id_user")%>">
   </div>
   <div class="form-group">
     <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" placeholder="Name" name="name" value="<%=session.getAttribute("name")%>">
+    <input type="text" class="form-control" id="name" placeholder="Name" name="name_user" value="<%=session.getAttribute("name_user")%>">
   </div>
    <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="<%=session.getAttribute("email")%>">
+    <input type="email" class="form-control" id="email" placeholder="Email" name="email_user" value="<%=session.getAttribute("email_user")%>">
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="<%=session.getAttribute("password")%>">
+    <input type="password" class="form-control" id="password" placeholder="Password" name="password_user" value="<%=session.getAttribute("password_user")%>">
   </div>
   <div class="form-group">
     <label for="roles">Roles</label>
-    <input type="text" class="form-control" id="roles" placeholder="Roles" name="roles" value="<%=session.getAttribute("roles")%>">
+    <input type="text" class="form-control" id="roles" placeholder="Roles" name="roles_user" value="<%=session.getAttribute("roles_user")%>">
   </div>
   <button type="submit" class="btn btn-success">Update</button>
   <a href="DataUser.jsp"><button type="button" class="btn btn-warning">Cancel</button></a>
