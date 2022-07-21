@@ -17,6 +17,7 @@
         <%@ include file="../header/header.jsp"%>
     <center><h1>Data User</h1></center>
         <div class="container-md">
+            <a href="AddUser.jsp"><button type="button" class="btn btn-success p-2" style="width: 100px;margin: 10px">Add</button></a>
             <form method="post">
         <table class="table table-dark table-striped gap-3">
   <thead>

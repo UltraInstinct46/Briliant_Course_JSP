@@ -83,6 +83,15 @@ public class User extends HttpServlet {
         UserModel pm = new UserModel();
         pm.CreateUser(name, email, password, "customer");
         }
+        else if(proses.equals("registeradmin")){
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String roles = request.getParameter("roles");
+        UserModel pm = new UserModel();
+        pm.CreateUser(name, email, password, roles);
+        response.sendRedirect("backend/user/DataUser.jsp");
+        }
         else if (proses.equals("deleteuser")) {
             UserModel pm = new UserModel();
             String id = request.getParameter("id");
