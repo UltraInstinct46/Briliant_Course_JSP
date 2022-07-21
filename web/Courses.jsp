@@ -4,6 +4,9 @@
     Author     : killua
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.CourseModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,147 +94,42 @@ html{
 </style>
     </head>
 <body style="background-color:#F2F3F5;">
-    <!-- navbar -->
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
-          <div class="container">
-            <a class="navbar-brand" href="index.jsp">
-              <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
-              Brilian
-            </a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            </div>
-            <form class="container-fluid justify-content-end">
-              <ul class="navbar-nav justify-content-end">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.jsp">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="Courses.jsp">Courses</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="Contact.jsp">Contact</a>
-                </li>
-              </ul>
-              <a href="auth/login.jsp"><button class="btn-lg btn-outline-success me-2 mr-3" type="button">Login</button></a>
-              <a href="auth/register.jsp"><button class="btn-lg btn-primary me-2 " type="button">Sign Up</button></a>
-            </form>
-          </nav>
-        </header>
+<%@ include file="header.jsp"%>
     <div class="container my-5">
     <div class="h1 text-center">What would you like to learn?</div>
     <hr>
     <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-2 shadow">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/java.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Java</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 clearfix d-none d-md-block">
-          <div class="card mb-2">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/javascript.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Javascript</h4>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 clearfix d-none d-md-block">
-          <div class="card mb-2">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/mysql.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Mysql</h4>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card mb-2 shadow">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/android.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Android</h4>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 clearfix d-none d-md-block">
-          <div class="card mb-2">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/codeigniter.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Codeigniter</h4>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 clearfix d-none d-md-block">
-          <div class="card mb-2">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/git.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Git</h4>
-
-
-            </div>
-          </div>
-        </div>
+      <% 
+      int i = 0;
+      int b = 0;
+      CourseModel cm = new CourseModel();
+      List<CourseModel> list = new ArrayList<CourseModel>();
+      list = cm.DataCourse();
+      while(i<list.size()){
+      %>
+      <% 
+          if(b>2){
+          %>
       </div>
 
       
       <div class="row mt-4">
+          <%
+              b=0; }
+          %>
         <div class="col-md-4">
           <div class="card mb-2 shadow">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/typescript.png"
+            <img class="card-img-top mx-auto mt-4" src="assets/img/<%= list.get(i).getImage() %>"
                  alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title text-center">Typescript</h4>
+              <h4 class="card-title text-center"><%= list.get(i).getType() %></h4>
             </div>
           </div>
         </div>
-
-        <div class="col-md-4 clearfix d-none d-md-block">
-          <div class="card mb-2">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/html5.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">HTML 5</h4>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4 clearfix d-none d-md-block">
-          <div class="card mb-2">
-            <img class="card-img-top mx-auto mt-4" src="assets/img/angularjs.png"
-                 alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title text-center">Angular JS</h4>
-
-
-            </div>
-          </div>
-        </div>
+        
+        <%
+          i++;
+          b++;} %>
       </div>
 
       </div>

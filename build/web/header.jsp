@@ -21,8 +21,8 @@
       <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg">
           <div class="container">
-            <a class="navbar-brand" href="index.jsp">
-              <img src="assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="${pageContext.request.contextPath}">
+              <img src="${pageContext.request.contextPath}/assets/img/B.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
               Brilian
             </a>
           </div>

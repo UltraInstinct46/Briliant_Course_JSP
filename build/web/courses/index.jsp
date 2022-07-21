@@ -1,9 +1,12 @@
 <%-- 
-    Document   : Contact
-    Created on : Jul 19, 2022, 9:45:10 AM
+    Document   : team
+    Created on : Jul 19, 2022, 9:47:21 AM
     Author     : killua
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="Model.CourseModel"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +35,8 @@
 <link rel="stylesheet" href="css/Footer_style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-  html{
-  scroll-behavior: smooth;
-}
-  ul{
-    margin-right: 20px;
+  .row{
+    margin: 30px;
   }
   .footer-content i{
     background-color: transparent;
@@ -176,7 +176,7 @@ html {
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin: 8px;
+  margin-left: 8px;
 }
 
 .about-section {
@@ -207,7 +207,7 @@ html {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #000;
+  background-color: #162447;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -447,93 +447,28 @@ div.a{
         font-family: 'Mulish', sans-serif;
         text-align: justify;
     }
+    ul{
+    margin-right: 20px;
+  }
+  html{
+  scroll-behavior: smooth;
+}
 </style>
 
     </head>
     <body id="page-top" style="background-color:#F2F3F5;">
       <!--Navbar-->
-      <%@ include file="header.jsp"%>
-  <!-- contact -->
-  <div class="mb-3">
-<div class="contact" id="contact">
-  <div class="container">
-    <div style="text-align:center">
-      <h2 style="font-size: 50px;"><b>Contact Us</b></h2>
-      <p>You can contact us if you have any questions about Brilian Course</p>
-    </div>
-    <div class="row">
-      <div class="column">
-        <img src="assets/img/contact.png" style="width:100%">
-      </div>
-      <div class="column">
-        <form class="border border-dark form-group" style="padding:20px">
-          <label for="fname">Name</label>
-          <input type="text" id="fname" name="Name" placeholder="Add your name" required>
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">
-            Please provide a valid Email.
-          </div>
-          
-          <label for="E-mail">E-mail</label>
-          <input type="text" id="femail" name="E-mail"placeholder="Add your E-mail" required>
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">
-            Please provide a valid Email.
-          </div>
-          
-          <label for="Massage">Massage</label>
-          <textarea id="Massage" name="Massage" placeholder="Add some Massage" style="height:170px" required></textarea>
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">
-            Please provide a valid Email.
-          </div>
-          <center><input type="submit" value="Send Message" style="background-color: #162447" id="submit"></center>
-        </form>
-      </div>
-    </div>
+      <%@ include file="../header.jsp"%>
+      <div class="container">
+          <form>
+              <a href="">
+<div class="card" style="margin-top:30px">
+  <div class="card-body">
+    This is some text within a card body.
   </div>
 </div>
-
-  <!-- Footer -->
-<%@ include file="footer.jsp"%>
-
-  
-          <script>
-(() => {
-  'use strict';
-  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
-  const forms = document.querySelectorAll('.needs-validation');
-
-  const alert = (message, type) => {
-  const wrapper = document.createElement('div')
-  wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-  ].join('')
-
-  alertPlaceholder.append(wrapper)
-}
-
-const alertTrigger = document.getElementById('submit')
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms).forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      else if(form.checkValidity()){
-        alertTrigger.addEventListener('click', () => {
-        alert('Login Successfully!', 'success')
-  });
-      }
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
-          </script>
+              </a>
+          </form>
+      </div>
     </body>
 </html>

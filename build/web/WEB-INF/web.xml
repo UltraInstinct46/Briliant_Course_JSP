@@ -4,9 +4,25 @@
         <servlet-name>User</servlet-name>
         <servlet-class>Controller.User</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Video</servlet-name>
+        <servlet-class>Controller.Video</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Course</servlet-name>
+        <servlet-class>Controller.Course</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>User</servlet-name>
         <url-pattern>/User</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Video</servlet-name>
+        <url-pattern>/Video</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Course</servlet-name>
+        <url-pattern>/Course</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -35,7 +35,7 @@
     </a>
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend/user/DataUser.jsp">User</a></li>
-      <li><a class="dropdown-item" href="#">Courses</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend/course/DataCourse.jsp">Courses</a></li>
     </ul>
 </li>
 
