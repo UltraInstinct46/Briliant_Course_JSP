@@ -14,10 +14,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@ include file="header.jsp"%>
+        <%@ include file="../header/header.jsp"%>
     <center><h1>Data User</h1></center>
         <div class="container-md">
-            <form method="post" action="../User?proses=deleteuser">
+            <form method="post">
         <table class="table table-dark table-striped gap-3">
   <thead>
     <tr>
@@ -44,8 +44,8 @@
       <td><%= list.get(i).getPassword() %></td>
       <td><%= list.get(i).getRoles() %></td>
       <td>
-          <a href="edit.jsp?id=<%= list.get(i).getId()%>" class="text-light"><button type="button" class="btn btn-warning px-2">Edit</button></a>
-          <a class="text-light"><button type="submit" class="btn btn-danger px-2" name="id" value="<%= list.get(i).getId() %>">Delete</button></a></td>
+          <button type="submit" class="btn btn-warning px-2" formaction="../../User?proses=updateuser" name="id" value="<%= list.get(i).getId() %>">Edit</button>
+          <button type="submit" class="btn btn-danger px-2"  formaction="../../User?proses=deleteuser" name="id" value="<%= list.get(i).getId() %>">Delete</button></td>
     </tr>
     <% i++;} %>
   </tbody>

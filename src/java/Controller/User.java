@@ -33,7 +33,7 @@ public class User extends HttpServlet {
         List<UserModel> dataUser = new ArrayList<UserModel>();
         dataUser = um.DataUser();
         request.setAttribute("dataUser", dataUser);
-        request.getRequestDispatcher("backend/DataUser.jsp").forward(request, response);
+        request.getRequestDispatcher("backend/user/DataUser.jsp").forward(request, response);
     }
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -62,8 +62,16 @@ public class User extends HttpServlet {
 
                     if (datalogin.get(0).getEmail().equals(email)) {
                         response.sendRedirect("Courses.jsp");
+                           System.out.println("<script type=\"text/javascript\">");
+                           System.out.println("alert('User or password incorrect');");
+                           System.out.println("location='Courses.jsp';");
+                           System.out.println("</script>");
                     } else {
                         response.sendRedirect("auth/login.jsp");
+                           System.out.println("<script type=\"text/javascript\">");
+                           System.out.println("alert('User or password incorrect');");
+                           System.out.println("location='auth/login.jsp';");
+                           System.out.println("</script>");
                     }
                 }
             }
@@ -79,7 +87,30 @@ public class User extends HttpServlet {
             UserModel pm = new UserModel();
             String id = request.getParameter("id");
             pm.DeleteUser(id);
-            response.sendRedirect("backend/DataUser.jsp");
+            response.sendRedirect("backend/user/DataUser.jsp");
+        }
+        else if (proses.equals("updateuser")) {
+            String id = request.getParameter("id");
+            List<UserModel> updatedata = new ArrayList<UserModel>();
+            UserModel um = new UserModel();
+            updatedata = um.SearchUser(id);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("id", updatedata.get(0).getId());
+            session.setAttribute("name", updatedata.get(0).getName());
+            session.setAttribute("email", updatedata.get(0).getEmail());
+            session.setAttribute("password", updatedata.get(0).getPassword());
+            session.setAttribute("roles", updatedata.get(0).getRoles());
+            response.sendRedirect("backend/user/EditUser.jsp");
+        }
+        else if (proses.equals("updateuserdata")) {
+            String id = request.getParameter("id");
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            String roles = request.getParameter("roles");
+            UserModel um = new UserModel();
+            um.UpdateUser(name, email, password, roles, id);
+            response.sendRedirect("backend/user/DataUser.jsp");
         }
         else{
             response.sendRedirect("auth/login.jsp");
