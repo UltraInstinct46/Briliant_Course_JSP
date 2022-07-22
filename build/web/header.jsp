@@ -62,19 +62,19 @@
             <form class="container-fluid justify-content-end">
               <ul class="navbar-nav justify-content-end">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.jsp">Home</a>
+                  <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Courses.jsp">Courses</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/Courses.jsp">Courses</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Profile.jsp">About</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/Profile.jsp">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="team.jsp">Team</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/team.jsp">Team</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="Contact.jsp">Contact</a>
+                  <a class="nav-link" href="${pageContext.request.contextPath}/Contact.jsp">Contact</a>
                 </li>
               </ul>
                                    <%
@@ -101,9 +101,9 @@
       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/HalamanProfileUser.jsp">Setting</a></li>
       <% if((session.getAttribute("roles").equals("admin"))) {
             %>
-      <li><a class="dropdown-item" href="<% request.getContextPath();%>/Briliant/backend">Admin Page</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend">Admin Page</a></li>
       <% } %>
-      <li><a class="dropdown-item" href="<% request.getContextPath();%>User?action=logout">Logout</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/User?action=logout">Logout</a></li>
     </ul>
   </li> 
  <% }%>

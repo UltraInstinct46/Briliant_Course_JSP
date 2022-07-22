@@ -464,26 +464,13 @@ div.a{
             %>
       <!--Navbar-->
       <%@ include file="../header.jsp"%>
-      <div class="container">
-          <form>
-<%
-        int i = 0;
-        String type = request.getParameter("type");
-        VideoModel vm = new VideoModel();
-        List<VideoModel> courselist = new ArrayList<VideoModel>();
-        courselist = vm.SearchVideo(type);
-        while(i<courselist.size()){
-    %>
-    <a href="video.jsp?id=<%=courselist.get(i).getCode()%>">
-<div class="card" style="margin-top:30px">
-  <div class="card-body">
-      <%=i+1%>. <%= courselist.get(i).getTitle()%>
-  </div>
-</div>
-    </a>
-<% i++;}%>
+      <div style="margin-top:50px;">
+    <center><iframe width="1000" height="715"
+      src="https://www.youtube.com/embed/<%=request.getParameter("id")%>?controls=0">
+      </iframe></center>
               </a>
           </form>
       </div>
+    </div>
     </body>
 </html>

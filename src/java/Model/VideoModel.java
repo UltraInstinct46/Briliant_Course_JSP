@@ -56,7 +56,7 @@ public class VideoModel {
         List data = new ArrayList();
         ResultSet rs = null;
         try {
-            String sql = "select * from video";
+            String sql = "select * from video order by type asc";
             rs = db.ambilData(sql);
 
             while (rs.next()) {
@@ -120,11 +120,11 @@ public class VideoModel {
             System.out.println("Terjadi kesalahan cari login admin, pada :\n" + a);
         }
     }
-    public List SearchVideo(String id) {
+    public List SearchVideo(String type) {
         List data = new ArrayList();
         ResultSet rs = null;
         try {
-            String sql = "select * from video where id_video = " + id;
+            String sql = "select * from video where type = '" + type + "'";
             rs = db.ambilData(sql);
 
             while (rs.next()) {

@@ -36,6 +36,7 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend/user/DataUser.jsp">User</a></li>
       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend/course/DataCourse.jsp">Courses</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/backend/video/DataVideo.jsp">Video</a></li>
     </ul>
 </li>
 
@@ -71,7 +72,7 @@
 
 
                     </ul>
-                    <% if(session.getAttribute("roles").equals("customers")) {
+                    <% if((session.getAttribute("roles").equals("customers")) || (session.getAttribute("roles") == null) || (session.getAttribute("roles") == "")) {
             response.sendRedirect(request.getContextPath());
                 }
             %>        

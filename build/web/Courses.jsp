@@ -117,6 +117,7 @@ html{
           <%
               b=0; }
           %>
+          <a href="courses/index.jsp?type=<%= list.get(i).getType() %>" style"    color: #000000;text-decoration: none;">
         <div class="col-md-4">
           <div class="card mb-2 shadow">
             <img class="card-img-top mx-auto mt-4" src="assets/img/<%= list.get(i).getImage() %>"
@@ -126,7 +127,7 @@ html{
             </div>
           </div>
         </div>
-        
+          </a>
         <%
           i++;
           b++;} %>

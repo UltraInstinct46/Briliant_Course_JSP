@@ -4,6 +4,7 @@
     Author     : killua
 --%>
 
+<%@page import="Model.VideoModel"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.CourseModel"%>
 <%@page import="java.util.ArrayList"%>
@@ -457,16 +458,30 @@ div.a{
 
     </head>
     <body id="page-top" style="background-color:#F2F3F5;">
+        <% if((session.getAttribute("email") == null) || (session.getAttribute("email") == "")) {
+            response.sendRedirect(request.getContextPath() + "/auth/login.jsp");
+                }
+            %>
       <!--Navbar-->
       <%@ include file="../header.jsp"%>
       <div class="container">
           <form>
-              <a href="">
+<%
+        int i = 0;
+        String type = request.getParameter("type");
+        VideoModel vm = new VideoModel();
+        List<VideoModel> courselist = new ArrayList<VideoModel>();
+        courselist = vm.SearchVideo(type);
+        while(i<courselist.size()){
+    %>
+    <a href="video.jsp?id=<%=courselist.get(i).getCode()%>">
 <div class="card" style="margin-top:30px">
   <div class="card-body">
-    This is some text within a card body.
+      <%=i+1%>. <%= courselist.get(i).getTitle()%>
   </div>
 </div>
+    </a>
+<% i++;}%>
               </a>
           </form>
       </div>
