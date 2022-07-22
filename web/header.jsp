@@ -13,6 +13,36 @@
     max-width: 100%;
     overflow-x: hidden;
 }
+  .growing{
+    background-color: #325288;
+    height: 300px;
+    padding: 10px;
+    margin-bottom: 300px;
+  }
+  .growing h1, .Paragraf{
+    color: white;
+    margin-top: 0px;
+    font-family:'Mulish', sans-serif
+  }
+  .footer-content i{
+    background-color: transparent;
+    padding: 0rem;
+  }
+  .footer-content .button{
+    background-color: #548CFF;
+    width: 300px;
+  }
+  .footer-content h3,p{
+    font-family: "Montserrat", sans-serif;
+  }
+  .footer-content h3{
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+  .footer-content p{
+    margin-top: 30px;
+    font-size: 20px;
+  }
         </style>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
     </head>
@@ -68,7 +98,7 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href=""><%=session.getAttribute("name")%></a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Setting</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/HalamanProfileUser.jsp">Setting</a></li>
       <% if((session.getAttribute("roles").equals("admin"))) {
             %>
       <li><a class="dropdown-item" href="<% request.getContextPath();%>/Briliant/backend">Admin Page</a></li>

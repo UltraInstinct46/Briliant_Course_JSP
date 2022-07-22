@@ -120,6 +120,22 @@ public class User extends HttpServlet {
             um.UpdateUser(name, email, password, roles, id_user);
             response.sendRedirect("backend/user/DataUser.jsp");
         }
+        else if (proses.equals("settinguserdata")) {
+            String id_setting = request.getParameter("id_setting");
+            String name_setting = request.getParameter("name_setting");
+            String email_setting = request.getParameter("email_setting");
+            String password_setting = request.getParameter("password_setting");
+            String roles_setting = request.getParameter("roles_setting");
+            UserModel um = new UserModel();
+            um.UpdateUser(name_setting, email_setting, password_setting, roles_setting, id_setting);
+            HttpSession session = request.getSession(true);
+                    session.setAttribute("email", email_setting);
+                    session.setAttribute("name", name_setting);
+                    session.setAttribute("id", id_setting);
+                    session.setAttribute("roles", roles_setting);
+                    session.setAttribute("password", password_setting);
+            response.sendRedirect(request.getContextPath());
+        }
         else{
             response.sendRedirect("auth/login.jsp");
         }

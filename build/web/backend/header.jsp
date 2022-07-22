@@ -92,7 +92,7 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href=""><%=session.getAttribute("name")%></a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Setting</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/HalamanProfileUser.jsp">Setting</a></li>
       <li><a class="dropdown-item" href="<% request.getContextPath();%>/Briliant">Home Page</a></li>
       <li><a class="dropdown-item" href="<% request.getContextPath();%>../User?action=logout">Logout</a></li>
     </ul>
