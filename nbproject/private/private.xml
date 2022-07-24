@@ -5,9 +5,10 @@
         <group>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/WEB-INF/web.xml</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/Course.java</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/Video.java</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/video/DataVideo.jsp</file>
-            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/Videos.java</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/User.java</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/Contact.jsp</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/video/AddVideo.jsp</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/video/EditVideo.jsp</file>
         </group>

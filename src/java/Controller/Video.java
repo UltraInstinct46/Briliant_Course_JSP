@@ -4,7 +4,6 @@
  */
 package Controller;
 
-import Model.UserModel;
 import Model.VideoModel;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,55 +13,31 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author killua
  */
-public class Videos extends HttpServlet {
+public class Video extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
+protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        String action= request.getParameter("action");
+        if (action.equals("logout")) {
+            HttpSession session = request.getSession();
+            session.invalidate();
+            response.sendRedirect(request.getContextPath());
+        }
+//        UserModel um = new UserModel();
+//        List<UserModel> dataUser = new ArrayList<UserModel>();
+//        dataUser = um.DataUser();
+//        request.setAttribute("dataUser", dataUser);
+//        request.getRequestDispatcher("backend/user/DataUser.jsp").forward(request, response);
     }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
+@Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+        throws ServletException, IOException {
         String proses = request.getParameter("proses");
         if(proses.equals("add")){
         String type = request.getParameter("type");
@@ -70,7 +45,7 @@ public class Videos extends HttpServlet {
         String code = request.getParameter("code");
         VideoModel vm = new VideoModel();
         vm.CreateVideo(type, title, code);
-        response.sendRedirect("backend/video/DataCode.jsp");
+        response.sendRedirect("backend/video/DataVideo.jsp");
         }
         else if (proses.equals("deletevideo")) {
             VideoModel vm = new VideoModel();
@@ -80,9 +55,9 @@ public class Videos extends HttpServlet {
         }
         else if (proses.equals("updatevideo")) {
             String id = request.getParameter("id");
-            List<VideoModel> updatedata = new ArrayList<UserModel>();
+            List<VideoModel> updatedata = new ArrayList<VideoModel>();
             VideoModel vm = new VideoModel();
-            updatedata = um.SearchVideo(id);
+            updatedata = vm.OneVideo(id);
             HttpSession session = request.getSession(true);
             session.setAttribute("id_video", updatedata.get(0).getId());
             session.setAttribute("type_video", updatedata.get(0).getType());
@@ -99,16 +74,8 @@ public class Videos extends HttpServlet {
             vm.UpdateVideo(type, title, code, id_video);
             response.sendRedirect("backend/video/DataVideo.jsp");
         }
+        else{
+            response.sendRedirect("auth/login.jsp");
+        }
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

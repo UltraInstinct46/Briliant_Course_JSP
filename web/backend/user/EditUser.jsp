@@ -34,7 +34,10 @@
   </div>
   <div class="form-group">
     <label for="roles">Roles</label>
-    <input type="text" class="form-control" id="roles" placeholder="Roles" name="roles_user" value="<%=session.getAttribute("roles_user")%>">
+    <select class="form-control" aria-label="Default select example" name="roles_user">
+      <option value="customers" <%if(session.getAttribute("roles_user").equals("customers")){%>selected<%}%>>customers</option>
+      <option value="admin" <%if(session.getAttribute("roles_user").equals("admin")){%>selected<%}%>>admin</option>
+    </select>
   </div>
   <button type="submit" class="btn btn-success">Update</button>
   <a href="DataUser.jsp"><button type="button" class="btn btn-warning">Cancel</button></a>

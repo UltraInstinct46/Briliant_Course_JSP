@@ -40,6 +40,12 @@
     </ul>
 </li>
 
+ <li class="nav-item dropdown no-arrow">
+    <a href="${pageContext.request.contextPath}/backend/donation/DataDonation.jsp"">
+    <span class="mr-2 d-none d-lg-inline text-gray-600">Donation</span>
+    </a>
+</li>
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
@@ -72,7 +78,7 @@
 
 
                     </ul>
-                    <% if((session.getAttribute("roles").equals("customers")) || (session.getAttribute("roles") == null) || (session.getAttribute("roles") == "")) {
+                    <% if((session.getAttribute("roles").equals("customers")) || (session.getAttribute("roles") == null) || (session.getAttribute("roles") == "") || (session.getAttribute("email") == null) || (session.getAttribute("email") == "")) {
             response.sendRedirect(request.getContextPath());
                 }
             %>        
@@ -94,8 +100,8 @@
       <li><a class="dropdown-item" href=""><%=session.getAttribute("name")%></a></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="${pageContext.request.contextPath}/HalamanProfileUser.jsp">Setting</a></li>
-      <li><a class="dropdown-item" href="<% request.getContextPath();%>/Briliant">Home Page</a></li>
-      <li><a class="dropdown-item" href="<% request.getContextPath();%>../User?action=logout">Logout</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/">Home Page</a></li>
+      <li><a class="dropdown-item" href="${pageContext.request.contextPath}/User?action=logout">Logout</a></li>
     </ul>
   </li> 
                 </nav>

@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import Model.DonateModel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -135,6 +136,16 @@ public class User extends HttpServlet {
                     session.setAttribute("roles", roles_setting);
                     session.setAttribute("password", password_setting);
             response.sendRedirect(request.getContextPath());
+        }
+        else if(proses.equals("donate")){
+        String name = request.getParameter("name");
+        String amount = request.getParameter("amount");
+        String message = request.getParameter("message");
+        DonateModel pm = new DonateModel();
+        pm.Donate(name, amount, message);
+        HttpSession session = request.getSession(true);
+        session.setAttribute("sukses", "true");
+        response.sendRedirect(request.getContextPath() + "/donation.jsp");
         }
         else{
             response.sendRedirect("auth/login.jsp");

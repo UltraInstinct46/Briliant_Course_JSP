@@ -4,6 +4,10 @@
     Author     : killua
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.CourseModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,10 +19,20 @@
     <body>
         <%@ include file="../header.jsp"%>
     <center><h1>Add Video</h1></center>
-    <form class="container" action="../../Videos?proses=add" method="post">
+    <form class="container" action="../../Video?proses=add" method="post">
   <div class="form-group">
     <label for="type">Type</label>
-    <input type="text" class="form-control" id="type" placeholder="Type" name="type" required>
+    <select class="form-control" aria-label="Default select example" name="type">
+      <% 
+      int i = 0;
+      CourseModel cm = new CourseModel();
+      List<CourseModel> list = new ArrayList<CourseModel>();
+      list = cm.DataCourse();
+      while(i<list.size()){
+      %>
+  <option value="<%= list.get(i).getType()%>"><%= list.get(i).getType()%></option>
+     <% i++;}%>
+</select>
   </div>
    <div class="form-group">
     <label for="title">Title</label>

@@ -30,7 +30,10 @@
   </div>
   <div class="form-group">
     <label for="roles">Roles</label>
-    <input type="text" class="form-control" id="roles" placeholder="Roles" name="roles" required>
+    <select class="form-control" aria-label="Default select example" name="roles">
+      <option value="customers">customers</option>
+      <option value="admin">admin</option>
+    </select>
   </div>
   <button type="submit" class="btn btn-success">Add</button>
   <a href="DataUser.jsp"><button type="button" class="btn btn-warning">Cancel</button></a>

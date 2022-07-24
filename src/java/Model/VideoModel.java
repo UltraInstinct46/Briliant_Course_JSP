@@ -141,4 +141,25 @@ public class VideoModel {
         }
         return data;
     }
+        public List OneVideo(String id) {
+        List data = new ArrayList();
+        ResultSet rs = null;
+        try {
+            String sql = "select * from video where id_video = '" + id + "'";
+            rs = db.ambilData(sql);
+
+            while (rs.next()) {
+                VideoModel cm = new VideoModel();
+                cm.setId(rs.getString("id_video"));
+                cm.setType(rs.getString("type"));
+                cm.setTitle(rs.getString("title"));                
+                cm.setCode(rs.getString("code"));
+                data.add(cm);
+            }
+            db.diskonek(rs);
+        } catch (Exception a) {
+            System.out.println("Terjadi kesalahaan cari login admin, pada :\n" + a);
+        }
+        return data;
+    }
 }

@@ -45,8 +45,8 @@
       <td><%= list.get(i).getTitle() %></td>
       <td><%= list.get(i).getCode() %></td>
       <td>
-          <button type="submit" class="btn btn-warning px-2" formaction="../../Videos?proses=updatevideo" name="id" value="<%= list.get(i).getId() %>">Edit</button>
-          <button type="submit" class="btn btn-danger px-2"  formaction="../../Videos?proses=deletevideo" name="id" value="<%= list.get(i).getId() %>">Delete</button></td>
+          <button type="submit" class="btn btn-warning px-2" formaction="../../Video?proses=updatevideo" name="id" value="<%= list.get(i).getId() %>">Edit</button>
+          <button type="submit" class="btn btn-danger px-2"  formaction="../../Video?proses=deletevideo" name="id" value="<%= list.get(i).getId() %>">Delete</button></td>
     </tr>
     <% i++;} %>
   </tbody>

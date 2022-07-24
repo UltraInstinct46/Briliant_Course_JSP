@@ -76,6 +76,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="${pageContext.request.contextPath}/Contact.jsp">Contact</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="${pageContext.request.contextPath}/donation.jsp">Donation</a>
+                </li>
               </ul>
                                    <%
             if((session.getAttribute("email") == null) || (session.getAttribute("email") == "")) {

@@ -4,25 +4,38 @@
     Author     : killua
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.CourseModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
     <!-- Custom styles for this template -->
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit User</title>
+        <title>Edit Video</title>
     </head>
     <body>
         <%@ include file="../header.jsp"%>
-    <center><h1>Edit User</h1></center>
-    <form class="container" action="../../Videos?proses=updatevideodata" method="post">
+    <center><h1>Edit Video</h1></center>
+    <form class="container" action="../../Video?proses=updatevideodata" method="post">
   <div class="form-group">
     <label for="id">ID</label>
     <input type="text" class="form-control" id="id" aria-describedby="id" placeholder="ID" readonly name="id_video" value="<%=session.getAttribute("id_video")%>">
   </div>
   <div class="form-group">
     <label for="type">Type</label>
-    <input type="text" class="form-control" id="type" placeholder="Type" name="type_video" value="<%=session.getAttribute("type_video")%>">
+    <select class="form-control" aria-label="Default select example" name="type_video">
+      <% 
+      int i = 0;
+      CourseModel cm = new CourseModel();
+      List<CourseModel> list = new ArrayList<CourseModel>();
+      list = cm.DataCourse();
+      while(i<list.size()){
+      %>
+      <option value="<%= list.get(i).getType()%>" <% if(session.getAttribute("type_video").equals(list.get(i).getType())){%>selected<%}%>><%= list.get(i).getType()%></option>
+     <% i++;}%>
+    </select>
   </div>
    <div class="form-group">
     <label for="title">Title</label>

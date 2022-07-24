@@ -9,8 +9,8 @@
         <servlet-class>Controller.Course</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Videos</servlet-name>
-        <servlet-class>Controller.Videos</servlet-class>
+        <servlet-name>Video</servlet-name>
+        <servlet-class>Controller.Video</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>User</servlet-name>
@@ -21,8 +21,8 @@
         <url-pattern>/Course</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Videos</servlet-name>
-        <url-pattern>/Videos</url-pattern>
+        <servlet-name>Video</servlet-name>
+        <url-pattern>/Video</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

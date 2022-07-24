@@ -171,4 +171,22 @@ public class UserModel {
         }
         return data;
     }
+    
+       public void Donate(String name, String amount, String message){
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        int updateQuery = 0;
+        try {
+            String sql = "insert into donation(name,amount,message) values(?,?,?)";
+            ps = db.ExecuteQuery(sql);
+            ps.setString(1, name);
+            ps.setString(2, amount);
+            ps.setString(3, message);
+            updateQuery = ps.executeUpdate();
+            db.diskonek(rs);
+
+        } catch(Exception a) {
+            System.out.println("Terjadi kesalahan cari login admin, pada :\n" + a);
+        }
+    }
 }
