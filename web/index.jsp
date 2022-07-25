@@ -396,6 +396,7 @@ div.a{
         text-align: center;
         font-family: 'Mulish', sans-serif;
         font-size: larger;
+        color:black;
    }
 
    * {
@@ -748,7 +749,7 @@ ul{
      </div>
  <br>
  
- <div class="Paragraf">
+ <div class="Paragraf" style="color:black;">
      <p1><b>It's popular.</b>
          Technical skills are in high demand.
          Over <b>60%</b> of new jobs worldwide will require tech skills.</p1>
