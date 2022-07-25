@@ -20,7 +20,7 @@
         <form action="${pageContext.request.contextPath}/User?proses=settinguserdata" method="POST">
             <span id="card-header">ID Customer</span>
             <div class="row row-1">
-                <input name="id_setting" type="text" value="<%=session.getAttribute("id")%>" required>
+                <input name="id_setting" type="text" value="<%=session.getAttribute("id")%>" required readonly>
             </div>
 
             <span id="card-header">Name</span>
