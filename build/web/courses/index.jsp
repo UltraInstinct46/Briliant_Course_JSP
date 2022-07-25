@@ -465,6 +465,7 @@ div.a{
       <!--Navbar-->
       <%@ include file="../header.jsp"%>
       <div class="container">
+          <div class="container" style="margin-top: 30px;"><center><button type="button" class="btn btn-outline-info btn-rounded" data-mdb-ripple-color="dark" style="width:200px" onclick="location.href='../Courses.jsp'">Course</button></center</div>
           <form>
 <%
         int i = 0;
@@ -474,7 +475,7 @@ div.a{
         courselist = vm.SearchVideo(type);
         while(i<courselist.size()){
     %>
-    <a href="video.jsp?id=<%=courselist.get(i).getCode()%>">
+    <a href="video.jsp?id=<%=courselist.get(i).getCode()%>&type=<%= request.getParameter("type")%>">
 <div class="card" style="margin-top:30px">
   <div class="card-body">
       <%=i+1%>. <%= courselist.get(i).getTitle()%>

@@ -3,14 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/WEB-INF/web.xml</file>
-            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/Course.java</file>
-            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/Video.java</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Model/CourseModel.java</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/video/DataVideo.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/user/AddUser.jsp</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/User.java</file>
-            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/Contact.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/donation.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/aboutus.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Model/VideoModel.java</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/video/AddVideo.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/header.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Model/UserModel.java</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/donation/DataDonation.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/user/EditUser.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Controller/Video.java</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/src/java/Model/DonateModel.java</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/Contact.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/payment.html</file>
             <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/backend/video/EditVideo.jsp</file>
+            <file>file:/mnt/9A529A1C5299FD67/project/JAVA/CCIT/Briliant/web/header.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -464,10 +464,11 @@ div.a{
             %>
       <!--Navbar-->
       <%@ include file="../header.jsp"%>
-      <div style="margin-top:50px;">
-    <center><iframe width="1000" height="715"
+      <div class="container" style="margin-top: 30px;"><center><button type="button" class="btn btn-outline-info btn-rounded" data-mdb-ripple-color="dark" style="width:200px" onclick="location.href='index.jsp?type=<%= request.getParameter("type")%>'">List <%= request.getParameter("type")%></button></center</div>
+      <div class="container" style="margin-top:20px;">
+    <iframe width="1000" height="715"
       src="https://www.youtube.com/embed/<%=request.getParameter("id")%>?controls=0">
-      </iframe></center>
+      </iframe>
               </a>
           </form>
       </div>
