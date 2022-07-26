@@ -91,7 +91,8 @@
                <li class="nav-item dropdown no-arrow" style="margin-right:100px;">
     <a class="nav-item dropdown no-arrow" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
     <img
-            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+            src="assets/img/profile.png"
+
             class="rounded-circle"
             height="42"
             alt="Portrait of a Woman"
