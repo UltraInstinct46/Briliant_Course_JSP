@@ -537,4 +537,5 @@ const alertTrigger = document.getElementById('submit')
           </script>
     </body>
     <script src="js/dist/sweetalert2.all.min.js"></script>
+    <script src="../web/js/dist/sweetalert2.all.min.js"></script>
 </html>
