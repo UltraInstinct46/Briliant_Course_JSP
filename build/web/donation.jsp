@@ -487,7 +487,7 @@ div.a{
           <div class="invalid-feedback">
             Please provide a valid Email.
           </div>
-          <center><input type="submit" value="Donate" style="background-color: #162447" id="submit"></center>
+          <center><input type="submit" value="Donate" style="background-color: #162447" onclick="Swal.fire('THANKS FOR YOUR DONATION')" id="submit"></center>
         </form>
       </div>
     </div>
@@ -537,4 +537,5 @@ const alertTrigger = document.getElementById('submit')
           </script>
     </body>
     <script src="js/dist/sweetalert2.all.min.js"></script>
+    <script src="../web/js/dist/sweetalert2.all.min.js"></script>
 </html>

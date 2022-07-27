@@ -483,8 +483,6 @@ style="width: 70%; height: auto; position: relative;margin-left: auto;margin-rig
       And we want to open new doors of many lives alone.
     </p>
 
-
-    
 </div>
 </div>
 
