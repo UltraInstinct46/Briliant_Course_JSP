@@ -91,7 +91,7 @@
                <li class="nav-item dropdown no-arrow" style="margin-right:100px;">
     <a class="nav-item dropdown no-arrow" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
     <img
-            src="assets/img/profile.png"
+            src="${pageContext.request.contextPath}/assets/img/profile.png"
 
             class="rounded-circle"
             height="42"
