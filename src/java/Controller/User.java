@@ -82,6 +82,7 @@ public class User extends HttpServlet {
         String password = request.getParameter("password");
         UserModel pm = new UserModel();
         pm.CreateUser(name, email, password, "customer");
+        response.sendRedirect(request.getContextPath());
         }
         else if(proses.equals("registeradmin")){
         String name = request.getParameter("name");
